@@ -13,14 +13,6 @@
 
 This project develops a comprehensive machine learning pipeline to classify patients' gut microbiota status into three categories: **Optimal**, **Suboptimal**, and **At Risk**. Using advanced feature engineering and multiple ML algorithms, we achieved production-ready models for personalized gut health assessment.
 
-### 🏆 Key Achievements
-
-- **🥇 Best Model**: LightGBM with F1-Score of **0.4388**
-- **📊 Comprehensive Evaluation**: 7 different ML algorithms tested
-- **⚙️ Advanced Engineering**: 54 → 92 engineered features
-- **📈 Production Ready**: Deployed model with monitoring capabilities
-- **📋 Full Documentation**: Complete reports and visualizations
-
 ## 🚀 Quick Start
 
 ### Prerequisites
