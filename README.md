@@ -34,8 +34,8 @@ pip install -r requirements.txt
 
 ```bash
 # Clone the repository
-git clone https://github.com/Ismail-Saihan/SMT--AI-job-task.git
-cd SMT--AI-job-task
+git clone https://github.com/Ismail-Saihan/microbiota-ml-pipeline.git
+cd microbiota-ml-pipeline
 
 # Create virtual environment
 python -m venv venv
@@ -98,6 +98,7 @@ python create_evaluation_summary.py
 ```
 ├── 📄 README.md                              # Project documentation
 ├── 📄 requirements.txt                       # Python dependencies
+├── 📄 .gitignore                            # Git ignore rules
 ├── 📄 Comprehensive_Evaluation_Report.md     # Complete evaluation analysis
 ├── 📄 Executive_Summary.md                   # Business summary report
 │
@@ -108,22 +109,84 @@ python create_evaluation_summary.py
 │   ├── final_model_tuning.py                # Model training & evaluation
 │   └── create_evaluation_summary.py          # Report generation
 │
-├── 🤖 Model Development
+├── 🤖 Model Development & Testing
 │   ├── model_development.py                  # Base model implementations
 │   ├── complete_model_development.py         # Complete training pipeline
-│   └── model_tuning.py                      # Hyperparameter optimization
+│   ├── model_tuning.py                      # Hyperparameter optimization
+│   ├── quick_model_tuning.py                # Quick tuning experiments
+│   ├── simple_model_tuning.py               # Simplified tuning approach
+│   ├── simplified_final_tuning.py           # Final simplified tuning
+│   ├── test_final_tuning.py                 # Tuning validation scripts
+│   ├── debug_tuning.py                      # Debugging utilities
+│   └── additional_insights.py               # Additional analysis insights
+│
+├── 🔧 Utilities & Testing
+│   ├── preprocessing_analysis.py            # Preprocessing validation
+│   ├── generate_visualizations.py           # Visualization generation
+│   ├── visualize_advanced_features.py       # Advanced feature visualization
+│   ├── gpu_model_test.py                    # GPU testing utilities
+│   ├── test_gpu.py                          # GPU capability tests
+│   ├── test_gpu_verbose.py                  # Detailed GPU testing
+│   └── minimal_test.py                      # Minimal functionality tests
 │
 ├── 📊 Visualizations & Results
 │   ├── eda_plots/                           # Exploratory analysis charts
+│   │   ├── 01_target_distribution.png
+│   │   ├── 02_demographic_analysis.png
+│   │   ├── 03_lifestyle_analysis.png
+│   │   ├── 04_dietary_correlation.png
+│   │   ├── 05_dietary_patterns.png
+│   │   ├── 06_gastrointestinal_analysis.png
+│   │   ├── 07_feature_correlation.png
+│   │   ├── 08_feature_importance.png
+│   │   └── 09_class_distribution_analysis.png
+│   │
 │   ├── model_plots/                         # Model performance visualizations
+│   │   ├── 01_model_comparison.png
+│   │   ├── 02_confusion_matrices.png
+│   │   ├── 03_roc_curves.png
+│   │   ├── 04_feature_importance.png
+│   │   └── 05_training_history.png
+│   │
 │   ├── evaluation_summary_plots/            # Comprehensive evaluation charts
+│   │   ├── 01_comprehensive_performance_analysis.png
+│   │   ├── 02_performance_radar_chart.png
+│   │   ├── 03_metrics_correlation_heatmap.png
+│   │   └── 04_model_category_comparison.png
+│   │
 │   ├── advanced_feature_plots/              # Feature engineering visuals
-│   └── preprocessing_results/               # Data preprocessing insights
+│   │   ├── 01_composite_dietary_metrics.png
+│   │   ├── 02_gut_health_risk_scores.png
+│   │   ├── 03_lifestyle_interactions.png
+│   │   ├── 04_recovery_protection.png
+│   │   ├── 05_ordinal_binning.png
+│   │   └── 06_feature_correlations.png
+│   │
+│   ├── preprocessing_results/               # Data preprocessing insights
+│   ├── tuning_plots/                        # Hyperparameter tuning plots
+│   └── final_tuning_plots/                  # Final tuning visualizations
 │
-├── 🗃️ Model Artifacts
+├── 🗃️ Model Artifacts & Data
 │   ├── model_results/                       # Trained models & evaluation
+│   │   ├── best_lstm_transformer.pth
+│   │   ├── best_tabtransformer.pth
+│   │   ├── evaluation_report.md
+│   │   ├── model_performance_comparison.csv
+│   │   └── transformer_training_history.npy
+│   │
 │   ├── tuning_results/                      # Hyperparameter tuning results
-│   └── final_tuning_results/                # Final model configurations
+│   ├── final_tuning_results/                # Final model configurations
+│   │   ├── best_randomforest_grid.pkl
+│   │   ├── best_randomforest_simplified.pkl
+│   │   ├── best_xgboost_grid.pkl
+│   │   └── simplified_tuning_results.json
+│   │
+│   ├── 📄 health_data_10000_chunk - health_data_10000_chunk.csv # Original dataset
+│   ├── 📄 advanced_feature_engineered_data.csv                  # Engineered features
+│   ├── 📄 enhanced_microbiota_data.csv                         # Enhanced dataset
+│   ├── 📄 processed_microbiota_data.npz                        # Processed data
+│   ├── 📄 feature_importance.csv                               # Feature importance data
+│   └── 📄 microbiota_preprocessor.pkl                          # Trained preprocessor
 │
 └── 📋 Documentation
     ├── eda_report.md                        # EDA findings
@@ -206,21 +269,25 @@ python create_evaluation_summary.py
 
 ### Installation
 
-1. **Clone/Download the project**
+1. **Clone the repository**
 
-   ```cmd
-   cd "c:\Users\Saihan\SM tech task"
+   ```bash
+   git clone https://github.com/Ismail-Saihan/microbiota-ml-pipeline.git
+   cd microbiota-ml-pipeline
    ```
 
 2. **Create virtual environment**
 
-   ```cmd
+   ```bash
    python -m venv .venv
+   # On Windows:
    .venv\Scripts\activate
+   # On macOS/Linux:
+   source .venv/bin/activate
    ```
 
 3. **Install dependencies**
-   ```cmd
+   ```bash
    pip install -r requirements.txt
    ```
 
@@ -248,10 +315,55 @@ Ensure these data files are in the project directory:
 
 ## 📈 Usage
 
-### 1. Exploratory Data Analysis
+### 🔄 Complete Pipeline Execution
 
-```cmd
+```bash
+# 1. Data Preprocessing
+python data_preprocessing.py
+
+# 2. Exploratory Data Analysis
 python microbiota_eda.py
+
+# 3. Advanced Feature Engineering
+python advanced_feature_engineering.py
+
+# 4. Model Training & Evaluation
+python final_model_tuning.py
+
+# 5. Generate Evaluation Report
+python create_evaluation_summary.py
+```
+
+### 🔬 Individual Analysis Scripts
+
+```bash
+# Preprocessing analysis
+python preprocessing_analysis.py
+
+# Complete model development
+python complete_model_development.py
+
+# Quick model tuning
+python quick_model_tuning.py
+
+# Additional insights generation
+python additional_insights.py
+
+# Generate visualizations
+python generate_visualizations.py
+```
+
+### 🎯 Specialized Utilities
+
+```bash
+# GPU testing (if available)
+python test_gpu.py
+
+# Minimal functionality test
+python minimal_test.py
+
+# Debug tuning issues
+python debug_tuning.py
 ```
 
 ## 🛠️ Technology Stack
@@ -515,8 +627,8 @@ We welcome contributions to improve the gut microbiota classification models! He
 
 ```bash
 # Fork the repository
-git clone https://github.com/Ismail-Saihan/SMT--AI-job-task.git
-cd SMT--AI-job-task
+git clone https://github.com/Ismail-Saihan/microbiota-ml-pipeline.git
+cd microbiota-ml-pipeline
 
 # Create a new branch
 git checkout -b feature/your-feature-name
@@ -574,7 +686,7 @@ git push origin feature/your-feature-name
 
 ### Project Information
 
-- **Repository**: [SMT--AI-job-task](https://github.com/Ismail-Saihan/SMT--AI-job-task)
+- **Repository**: [microbiota-ml-pipeline](https://github.com/Ismail-Saihan/microbiota-ml-pipeline)
 - **Issues**: Report bugs or request features via GitHub Issues
 - **Discussions**: Use GitHub Discussions for questions
 
@@ -597,7 +709,7 @@ If you use this work in your research, please cite:
 Gut Microbiota Classification using Machine Learning
 Author: Ismail Saihan
 Year: 2025
-Repository: https://github.com/Ismail-Saihan/SMT--AI-job-task
+Repository: https://github.com/Ismail-Saihan/microbiota-ml-pipeline
 ```
 
 ---
@@ -606,8 +718,8 @@ Repository: https://github.com/Ismail-Saihan/SMT--AI-job-task
 
 **⭐ Star this repository if you found it helpful!**
 
-![GitHub stars](https://img.shields.io/github/stars/Ismail-Saihan/SMT--AI-job-task?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Ismail-Saihan/SMT--AI-job-task?style=social)
+![GitHub stars](https://img.shields.io/github/stars/Ismail-Saihan/microbiota-ml-pipeline?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Ismail-Saihan/microbiota-ml-pipeline?style=social)
 
 </div>
 
