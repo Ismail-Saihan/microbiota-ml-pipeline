@@ -1,0 +1,95 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyTorch models (large files - keep only essential ones)
+*.pth
+!best_*.pth
+
+# Large data files
+*.csv
+*.npz
+*.pkl
+!microbiota_preprocessor.pkl
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Data files (keep only essential ones)
+*.csv
+!*_chunk*.csv
+!model_performance_comparison.csv
+
+# Large data files
+*.npz
+*.pkl
+!microbiota_preprocessor.pkl
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Model artifacts (keep only essential)
+*.joblib
+*.pickle
+
+# Results that can be regenerated
+tuning_results/
+final_tuning_results/
